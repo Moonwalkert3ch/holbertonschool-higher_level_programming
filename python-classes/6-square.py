@@ -24,7 +24,7 @@ class Square:
         retrieves the size of square
         """
 
-        return self. __size
+        return (self. __size)
 
     @size.setter
     def size(self, value):
@@ -46,7 +46,7 @@ class Square:
         retrieves position of square
         """
 
-        return self.__position
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -76,11 +76,12 @@ class Square:
         prints the square with the character #
         """
 
-        [print() for i in range(self.__position[1])]
-        for i in range(self.__size):
-            [print("", end="") for j in range(self.__position[0])]
-            [print("#", end="") for k in range(self.__size)]
+        [print() for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for n in range(0, self.__size)]
             print()
 
         if self.__size == 0:
             print()
+            return
