@@ -6,6 +6,8 @@ of the specified class ; otherwise False
 
 def is_same_class(obj, a_class):
     """
+     Param: Arg1: obj(any) - instancee to check
+     Arg2: a_class(match1) - specified class
      returns True if the object is exactly an instance
      otherwise flse if not of the specified class
     """
