@@ -9,5 +9,5 @@ def save_to_json_file(my_obj, filename):
     Param Arg1: my_obj(str) - object to be written
     Arg2: filename(str) - file
     """
-    with open(filename, "w") as m:
-        json.dump(my_obj, m)
+    with open(filename, "w") as f:
+        json.dump(my_obj, f)
