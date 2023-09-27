@@ -16,6 +16,6 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def class_to_json(self):
-        """Retrieve distionary representation"""
+    def to_json(self):
+        """Retrieves the dictionary representation"""
         return self.__dict__
