@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Defines a Base class model"""
+import json
 
 
 class Base:
     """Represents a Base model
-    Attr: __nb_objects(int) - count
+    Attr: __nb_objects(int) - counter
     """
 
     __nb_objects = 0
@@ -18,5 +19,5 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            Base.__no_objects += 1
+            Base.__nb_objects += 1
             self.id = Base.__nb_objects
