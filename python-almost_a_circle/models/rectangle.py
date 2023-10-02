@@ -109,6 +109,8 @@ class Rectangle(Base):
         rectangle = ""
         symbol = "#"
 
+        print("\n" * self.y, end="")
+
         for row in range(self.__height):
             rectangle += (" " * self.X) + (symbol * self.width) + "\n"
         print(rectangle, end="")
