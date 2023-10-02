@@ -96,6 +96,9 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def area(self):
+        return self.width * self.height
+
     def __str__(self):
         """Return the print() and str() representation"""
         return 
