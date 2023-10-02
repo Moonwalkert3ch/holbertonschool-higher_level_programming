@@ -113,4 +113,4 @@ i
 
     def __str__(self):
         """Return the print() and str() representation"""
-        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self).id, self.x, self.y, self.width, self.height)
