@@ -97,7 +97,8 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        return self.width * self.height
+        """return area measurement"""
+        return (self.width * self.height)
 
     def __str__(self):
         """Return the print() and str() representation"""
