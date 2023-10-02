@@ -108,9 +108,9 @@ class Rectangle(Base):
         for row in range(self.__height - 1):
             rectangle += symbol * self.__width + "\n"
         rectangle += symbol * self.__width
-
+i
         print("{}".format(rectangle))
 
     def __str__(self):
         """Return the print() and str() representation"""
-        return
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.__x, self.__y, self.__width, self.__height)
