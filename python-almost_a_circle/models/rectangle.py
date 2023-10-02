@@ -97,11 +97,15 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """return area measurement"""
+        """
+        return area measurement
+        """
         return (self.width * self.height)
 
     def display(self):
-        """Returns rectangle in # symbol character """
+        """
+        Returns rectangle in # symbol character
+        """
         rectangle = ""
         symbol = "#"
 
@@ -112,5 +116,7 @@ i
         print("{}".format(rectangle))
 
     def __str__(self):
-        """Return the print() and str() representation"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self).id, self.x, self.y, self.width, self.height)
+        """
+        Return the print() and str() representation
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self).__id, self.__x, self.__y, self.__width, self.__height)
