@@ -109,14 +109,13 @@ class Rectangle(Base):
         rectangle = ""
         symbol = "#"
 
-        for row in range(self.__height - 1):
-            rectangle += symbol * self.__width + "\n"
-        rectangle += symbol * self.__width
-i
-        print("{}".format(rectangle))
+        for row in range(self.__height):
+            rectangle += (" " * self.X) + (symbol * self.width) + "\n"
+        print(rectangle, end="")
 
     def __str__(self):
         """
         Return the print() and str() representation
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self).__id, self.__x, self.__y, self.__width, self.__height)
+    
