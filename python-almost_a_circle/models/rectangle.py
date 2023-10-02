@@ -10,9 +10,9 @@ class Rectangle(Base):
         """initializes the rectangle
         Param Arg1: width(int) - width of rectangle
         Arg2: height(int) - height of rectangle
-        Arg3: x - points to itself
-        Arg4: y - points to itself
-        Arg5: id - none
+        Arg3:(int) x - points to itself
+        Arg4:(int) y - points to itself
+        Arg5: id(int) - identity of rectangle
         """
         super().__init__(id)
         self.width = width
@@ -52,7 +52,7 @@ class Rectangle(Base):
         TypeError - if not an int
         ValueError -  if lt 0
         """
-        if type(value) != 0:
+        if type(value) != int:
             raise TypeError("height must be a in integer")
         if value <= 0:
             raise ValueError("height must be > 0")
