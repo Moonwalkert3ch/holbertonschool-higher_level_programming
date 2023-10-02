@@ -106,7 +106,8 @@ class Rectangle(Base):
         symbol = "#"
 
         for row in range(self.__height - 1):
-            rectangle += symbol * self.__width
+            rectangle += symbol * self.__width + "\n"
+        rectangle += symbol * self.__width
 
         print("{}".format(rectangle))
 
