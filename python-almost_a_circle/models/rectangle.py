@@ -102,4 +102,4 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return the print() and str() representation"""
-        return 
+        return
