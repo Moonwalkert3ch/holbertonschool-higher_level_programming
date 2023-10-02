@@ -100,6 +100,16 @@ class Rectangle(Base):
         """return area measurement"""
         return (self.width * self.height)
 
+    def display(self):
+        """Returns rectangle in # symbol character """
+        rectangle = ""
+        symbol = "#"
+
+        for row in range(self.__height - 1):
+            rectangle += symbol * self.__width
+
+        print("{}".format(rectangle))
+
     def __str__(self):
         """Return the print() and str() representation"""
         return
