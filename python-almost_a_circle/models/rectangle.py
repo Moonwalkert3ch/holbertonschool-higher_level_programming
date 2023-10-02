@@ -37,6 +37,7 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
+
         self.__width = value
 
     @property
@@ -56,6 +57,7 @@ class Rectangle(Base):
             raise TypeError("height must be a in integer")
         if value <= 0:
             raise ValueError("height must be > 0")
+
         self.__height = value
 
     @property
@@ -75,6 +77,7 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
+
         self.__x = value
 
     @property
@@ -94,13 +97,14 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
+
         self.__y = value
 
     def area(self):
         """
         return area measurement
         """
-        return (self.width * self.height)
+        return (self.__width * self.__height)
 
     def display(self):
         """
@@ -111,7 +115,7 @@ class Rectangle(Base):
 
         print("\n" * self.y, end="")
 
-        for row in range(self.__height):
+        for row in range(self.height):
             rectangle += (" " * self.X) + (symbol * self.width) + "\n"
         print(rectangle, end="")
 
@@ -119,8 +123,8 @@ class Rectangle(Base):
         """
         Return the print() and str() representation
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(type
-                (self).__id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self).__id,
+                    self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args):
         """
@@ -143,5 +147,6 @@ class Rectangle(Base):
             """returns dictionary
             """
             return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
-                    'id': getattr(self. "id"), 'height': getattr(self, "height"),
+                    'id': getattr(self. "id"), 'height':
+                    getattr(self, "height"),
                     'width': getattr(self, "width")}
