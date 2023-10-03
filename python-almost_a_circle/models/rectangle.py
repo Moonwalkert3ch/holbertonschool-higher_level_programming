@@ -110,12 +110,12 @@ class Rectangle(Base):
         """
         Returns rectangle in # symbol character
         """
-        for rows in range(self.__y):
+        for a in range(self.__y):
             print("")
-        for rows in range(self.__height):
-            for col in range(self.__x):
+        for a in range(self.__height):
+            for g in range(self.__x):
                 print(" ", end="")
-            for i in range(self.__width):
+            for c in range(self.__width):
                 print("#", end="")
             print("")
 
