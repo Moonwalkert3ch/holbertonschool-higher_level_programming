@@ -37,9 +37,9 @@ class Base:
         Param Arg1: list_objs - list of inheritance instances in base
         """
     filename = cls.__name__ + ".json"
-    with open(filename, "w") as jfile:
+    with open(filename, "w") as jsonfile:
         if list_objs is None:
-            jfile.write("[]")
+            jsonfile.write("[]")
         else:
             list_dictionary = [o.to_dictionary() for o in list_objs]
-            jfile.write(Base.to_json_string(list_dictionary))
+            jsonfile.write(Base.to_json_string(list_dictionary))
