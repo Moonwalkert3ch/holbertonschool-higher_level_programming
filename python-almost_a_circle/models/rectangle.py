@@ -110,20 +110,21 @@ class Rectangle(Base):
         """
         Returns rectangle in # symbol character
         """
-        rectangle = ""
-        symbol = "#"
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
 
-        print("\n" * self.y, end="")
-
-        for row in range(self.height):
-            rectangle += (" " * self.X) + (symbol * self.width) + "\n"
-        print(rectangle, end="")
+        [print("") for sy in range(self.y)]
+        for sh in range(self.height):
+            [print(" ", end="") for sx in range(self.x)]
+            [print("#", end="") for sw in range(self.width)]
+            print("")
 
     def __str__(self):
         """
         Return the print() and str() representation
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self).__id,
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self.__id,
                     self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args):
