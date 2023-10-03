@@ -151,7 +151,8 @@ class Rectangle(Base):
                 if key in keywords:
                     if key == "id":
                         if value is None:
-                            self.__init__(self.width, self.height, self.x, self.y)
+                            self.__init__(self.width, self
+                                          .height, self.x, self.y)
                         else:
                             self.id = value
                     elif key == "width":
@@ -165,5 +166,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
-        return ({"id": self.id, "width": self.width, "height": self.height, 
-            "x": self.x, "y": self.y})
+        return ({"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y})
