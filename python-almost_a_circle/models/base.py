@@ -59,10 +59,9 @@ class Base:
         """returns an instance with all attributes already set
         Param Arg: dictionary - double pointer to a dictionary
         """
-        if dictionary and dictionary != {}:
-            if cls.__name__ == "Rectangle":
-                dummy = cls(1, 1)
-            else:
-                dummy = cls(1)
-            dummy.update(**dictionary)
-            return dummy
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
