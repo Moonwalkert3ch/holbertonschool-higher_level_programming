@@ -36,10 +36,17 @@ class Base:
         """writes the JSON string representation of list_objs to a file
         Param Arg1: list_objs - list of inheritance instances in base
         """
-    filename = cls.__name__ + ".json"
-    with open(filename, "w") as jsonfile:
-        if list_objs is None:
-            jsonfile.write("[]")
-        else:
-            list_dictionary = [o.to_dictionary() for o in list_objs]
-            jsonfile.write(Base.to_json_string(list_dictionary))
+    if list_objs is None:
+        with open(f"{cls.__name__}.json", "w+",) as jfile:
+            json.dump([], jfile)
+            return
+
+        dict_list = []
+        for instance in list_objs:
+            instance_list = cls.to_dictionary(instance)
+            dict_list.append(instance_list)
+
+        jlist = Base.to_json_string(dict_list)
+
+        with open(f"{cls.__name__}.json", "w+") as jfile:
+            f.write(jlist)
