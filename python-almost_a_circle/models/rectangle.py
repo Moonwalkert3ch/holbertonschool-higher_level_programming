@@ -143,3 +143,18 @@ class Rectangle(Base):
                     self.x = arg
                 elif arg is args[4]:
                     self.y = arg
+
+        else:
+            keywords = {"id", "width", "height", "x", "y"}
+            for key, value in kwargs.items():
+                if key in keywords:
+                    if key == "id":
+                        self.id = value
+                    elif key == "width":
+                        self.width = value
+                    elif key == "height":
+                        self.height = value
+                    elif key == "x":
+                        self.x = value
+                    elif key == "y":
+                        self.y = value
