@@ -126,10 +126,11 @@ class Rectangle(Base):
         return (f"[{self.__class__.__name__}] ({self.id}) "
                 f"{self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
          assigns an argument to each attribute
-         Param Arg: *args - no kw arg
+         Param Arg1: *args - arg to assign to attr
+         Arg2: kwargs - points to a dict key/value
         """
         if args:
             for arg in args:
