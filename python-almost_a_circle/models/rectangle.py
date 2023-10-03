@@ -110,39 +110,39 @@ class Rectangle(Base):
         """
         Returns rectangle in # symbol character
         """
-        if self.width == 0 or self.height == 0:
+        for rows in range(self.__y):
             print("")
-            return
-
-        [print("") for sy in range(self.y)]
-        for sh in range(self.height):
-            [print(" ", end="") for sx in range(self.x)]
-            [print("#", end="") for sw in range(self.width)]
+        for rows in range(self.__height):
+            for col in range(self.__x):
+                print(" ", end="")
+            for i in range(self.__width):
+                print("#", end="")
             print("")
 
     def __str__(self):
         """
         Return the print() and str() representation
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(type(self.__id,
-                    self.__x, self.__y, self.__width, self.__height)
+        return (f"[{self.__class__.__name__}] ({self.id})"
+                f"{self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
     def update(self, *args):
         """
          assigns an argument to each attribute
          Param Arg: *args - no kw arg
         """
-        if len(args) == 0:
-            return
-
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except IndexError:
-            pass
+        if args:
+            for arg in args:
+                if arg is args[0]:
+                    self.id = arg
+                elif arg is args[1]:
+                    self.width = arg
+                elif arg is args[2]:
+                    self.height = arg
+                elif arg is args[3]:
+                    self.x = arg
+                elif arg is args[4]:
+                    self.y = arg
 
         def dictionary(self):
             """returns dictionary
