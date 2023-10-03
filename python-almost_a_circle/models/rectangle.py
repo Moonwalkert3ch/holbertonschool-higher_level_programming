@@ -111,19 +111,19 @@ class Rectangle(Base):
         Returns rectangle in # symbol character
         """
         for a in range(self.__y):
-            print("")
+            print('')
         for a in range(self.__height):
-            for g in range(self.__x):
-                print(" ", end="")
+            for b in range(self.__x):
+                print(' ', end='')
             for c in range(self.__width):
-                print("#", end="")
-            print("")
+                print('#', end='')
+            print('')
 
     def __str__(self):
         """
         Return the print() and str() representation
         """
-        return (f"[{self.__class__.__name__}] ({self.id})"
+        return (f"[{self.__class__.__name__}] ({self.id}) "
                 f"{self.__x}/{self.__y} - {self.__width}/{self.__height}")
 
     def update(self, *args):
@@ -143,11 +143,3 @@ class Rectangle(Base):
                     self.x = arg
                 elif arg is args[4]:
                     self.y = arg
-
-        def dictionary(self):
-            """returns dictionary
-            """
-            return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
-                    'id': getattr(self. "id"), 'height':
-                    getattr(self, "height"),
-                    'width': getattr(self, "width")}
