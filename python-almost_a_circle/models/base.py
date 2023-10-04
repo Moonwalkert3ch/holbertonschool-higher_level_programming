@@ -60,11 +60,11 @@ class Base:
         Param Arg: dictionary - double pointer to a dictionary
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
+            dummy_instance = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
+            dummy_instance = cls(1)
+        dummy_instance.update(**dictionary)
+        return dummy_instance
 
     @classmethod
     def load_from_file(cls):
