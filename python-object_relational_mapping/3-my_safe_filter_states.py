@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" SQL injection to delete a tb """
+""" displays all values at name """
 import MySQLdb
 import sys
 
