@@ -20,4 +20,4 @@ if __name__ == "__main__":
     if instance is None:
         print('Not found')
     else:
-        print('{0}'.format(instance.id))
+        print('{}'.format(state.id))
