@@ -15,3 +15,5 @@ print () {
     console.log(rows);
   }
 }
+
+module.exports = Rectangle;
