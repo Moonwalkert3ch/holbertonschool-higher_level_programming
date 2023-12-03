@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
-const filePath = process.argv[2];
+const url = process.argv[2];
 
-request.get(filePath).on('response', function (response) {
+request.get(url, (response) => {
   console.log('code: ${response.statusCode}');
 });
