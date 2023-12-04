@@ -9,7 +9,7 @@ request(url, function (err, body, response) {
     if (err) {
         console.error(`Error code: ${err}`);
     } else if (response.statusCode === 200) {
-        fs.writeFile(fileOutput, body, 'utf8', (error) {
+        fs.writeFile(fileOutput, body, 'utf8', (error) => {
             if (error) {
                 console.error(`An error has occurred`)
             }
