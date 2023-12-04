@@ -6,7 +6,7 @@ const fs = require('fs');
 const url = process.argv[2];
 const fileOutput = process.argv[3];
 
-request(url, 'utf8', function (error, response, body) {
+request(url, function (error, response, body) {
   if (error) {
     console.error(`Error code: ${error}`);
   } else if (response.statusCode === 200) {
