@@ -13,14 +13,14 @@ request(url, { json: true }, (error, response, todos) => {
 
     completedTasks.forEach(tasks => {
       if (!userTasksCompleted[tasks.userId]) {
-        userTasksCompleted[tasks.userId] = 1;
+        userTasksCompleted[tasks.userId] = new Set([tasks.id]);
       } else {
-        userTasksCompleted[tasks.userId]+= 1;
+        userTasksCompleted[tasks.userId].add(tasks.id);
       }
     });
 
     Object.keys(userTasksCompleted).forEach(userId => {
-      console.log(`${userId}: ${userTasksCompleted[userId]}`);
+      console.log(`'${userId}': ${userTasksCompleted[userId].size}`);
     });
   } else {
     console.error(`${response.statusCode}`);
