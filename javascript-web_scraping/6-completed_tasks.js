@@ -7,19 +7,20 @@ request(url, { json: true }, (error, response, todos) => {
   if (error) {
     console.error('An error has occurred');
   } else if (response.statusCode === 200) {
-    const userTasksDone = {};
-    const tasksDone = todos.filter(tasks => tasks.done);
+    const userTasksCompleted = {};
 
-    tasksDone.forEach(tasks => {
-      if (!userTasksDone[tasks.userId]) {
-        userTasksDone[tasks.userId] = 1;
+    const completedTasks = todos.filter(tasks => tasks.completed);
+
+    completedTasks.forEach(tasks => {
+      if (!userTasksCompleted[tasks.userId]) {
+        userTasksCompleted[tasks.userId] = 1;
       } else {
-        userTasksDone[tasks.userId]++;
+        userTasksCompleted[tasks.userId]++;
       }
     });
 
-    Object.keys(userTasksDone).forEach(userId => {
-      console.log(`${userId}: ${userTasksDone[userId]}`);
+    Object.keys(userTasksCompleted).forEach(userId => {
+      console.log(`${userId}: ${userTasksCompleted[userId]}`);
     });
   } else {
     console.error(`${response.statusCode}`);
