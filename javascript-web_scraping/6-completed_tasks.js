@@ -15,7 +15,7 @@ request(url, { json: true }, (error, response, todos) => {
       if (!userTasksCompleted[tasks.userId]) {
         userTasksCompleted[tasks.userId] = 1;
       } else {
-        userTasksCompleted[tasks.userId]++;
+        userTasksCompleted[tasks.userId]+= 1;
       }
     });
 
