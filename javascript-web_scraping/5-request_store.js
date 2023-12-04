@@ -8,11 +8,11 @@ const fileOutput = process.argv[3];
 
 request(url, 'utf8', function (error, response, body) {
   if (error) {
-    console.error(`Error code: ${err}`);
+    console.error(`Error code: ${error}`);
   } else if (response.statusCode === 200) {
     fs.writeFile(fileOutput, body, 'utf8', (err) => {
       if (err) {
-        console.error('An error has occurred: ${err}');
+        console.error(`${err}`);
       } else {
         console.log(`${fileOutput}`);
       }
